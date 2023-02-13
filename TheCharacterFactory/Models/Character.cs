@@ -17,7 +17,7 @@
         }
 
 
-        private static int nextid = 0;
+        private static int nextid = 1;
         public int ID { get; set; }
         public string CharacterName { get; set; }
         public string Denomination { get; set; }

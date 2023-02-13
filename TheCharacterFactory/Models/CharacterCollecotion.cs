@@ -2,7 +2,7 @@
 {
     public class CharacterCollecotion
     {
-        private static int nextid = 0;
+        private static int nextid = 1;
         public int ID { get; set; }
 
 
