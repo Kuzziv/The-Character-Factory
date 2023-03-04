@@ -1,6 +1,6 @@
 ﻿namespace TheCharacterFactory.Services.SQLService
 {
-    public class SQLCharacter
+    public class SQLPowerService
     {
 
 

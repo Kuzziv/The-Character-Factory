@@ -6,7 +6,7 @@
         {
         }
 
-        public Power(int iD, string name, string description, string type)
+        public Power(string name, string description, string type)
         {
             ID = nextid++;
             Name = name;

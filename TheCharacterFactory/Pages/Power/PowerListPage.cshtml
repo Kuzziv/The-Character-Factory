@@ -1,0 +1,47 @@
+﻿@page
+@model TheCharacterFactory.Pages.Power.PowerListPageModel
+@{
+}
+
+
+<h4 style="color:red"> List of Power </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.PowerList != null)
+        {
+            @foreach (var item in Model.PowerList)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Description
+                    </td>
+                    <td>
+                        @item.Type
+                    </td>                  
+                </tr>
+            }
+        }
+    </tbody>
+</table>
