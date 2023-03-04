@@ -1,0 +1,60 @@
+﻿@page
+@model TheCharacterFactory.Pages.Character.CharacterListPageModel
+@{
+}
+
+
+
+<h4 style="color:red"> List of Character </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Character name
+            </th>
+            <th>
+                Denomination
+            </th>
+            <th>
+                Note
+            </th>
+            <th>
+                Full Name
+            </th>
+            <th>
+                TLF
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Characters != null)
+        {
+            @foreach (var item in Model.Characters)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        @item.CharacterName
+                    </td>
+                    <td>
+                        @item.Denomination
+                    </td>
+                    <td>
+                        @item.Note
+                    </td>
+                    <td>
+                        @item.FullName
+                    </td>
+                    <td>
+                        @item.TLF
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,12 +1,10 @@
 ﻿using TheCharacterFactory.Models;
 
-namespace TheCharacterFactory.Services
+namespace TheCharacterFactory.Services.Interface
 {
     public interface ICharacterService
     {
         List<Character> GetCharacters();
-
-
 
 
     }

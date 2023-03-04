@@ -1,6 +1,7 @@
 ﻿using TheCharacterFactory.Models;
+using TheCharacterFactory.Services.Interface;
 
-namespace TheCharacterFactory.Services
+namespace TheCharacterFactory.Services.MockService
 {
     public class CharacterService : ICharacterService
     {
@@ -11,8 +12,9 @@ namespace TheCharacterFactory.Services
             _characters = MockData.MockCharacter.GetMockCharacterStories();
         }
 
-
-        public List<Character> GetCharacters() { return _characters; }
-
+        public List<Character> GetCharacters()
+        {
+             return _characters; 
+        }
     }
 }
