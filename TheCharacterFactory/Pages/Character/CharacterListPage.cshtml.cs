@@ -8,7 +8,7 @@ namespace TheCharacterFactory.Pages.Character
     {
         ICharacterService characterService;
 
-        public IEnumerable<Models.Character> Characters { get; set; }
+        public List<Models.Character> Character { get; set; }
 
         public CharacterListPageModel(ICharacterService characterService)
         {
@@ -17,6 +17,7 @@ namespace TheCharacterFactory.Pages.Character
 
         public void OnGet()
         {
+            Character = characterService.GetCharacters();
         }
     }
 }
