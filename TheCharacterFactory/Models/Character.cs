@@ -6,11 +6,12 @@
         {
         }
 
-        public Character(string characterName, string denomination, string note, string fullName, double tLF)
+        public Character(string characterName,string race, string denomination, string note, string fullName, double tLF)
         {
             ID = nextid++;
             CharacterName = characterName;
             Denomination = denomination;
+            Race = race;
             Note = note;
             FullName = fullName;
             TLF = tLF;
@@ -20,6 +21,7 @@
         private static int nextid = 1;
         public int ID { get; set; }
         public string CharacterName { get; set; }
+        public string Race { get; set; }
         public string Denomination { get; set; }
         public string Note { get; set; }
         public string FullName { get; set; }
