@@ -15,7 +15,6 @@ namespace TheCharacterFactory.Pages.Power
             this.powerService = powerService;
         }
 
-
         public void OnGet()
         {
             PowerList = powerService.GetPowerList();

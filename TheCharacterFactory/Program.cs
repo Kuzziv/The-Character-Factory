@@ -1,4 +1,5 @@
 using TheCharacterFactory.Services.Interface;
+using TheCharacterFactory.Services.JsonService;
 using TheCharacterFactory.Services.MockService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<ICharacterService, CharacterService>();
 builder.Services.AddSingleton<IPowerService, PowerService>();
+builder.Services.AddSingleton<JsonServiceFile>();
 
 var app = builder.Build();
 
