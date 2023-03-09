@@ -28,7 +28,6 @@ namespace TheCharacterFactory.Pages.Character
                 return Page();
             }
 
-            _IcharacterService.AddCharacter(Character);
             return RedirectToPage("/Character/CharacterListPage");
         }
     }
