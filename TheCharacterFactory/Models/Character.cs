@@ -14,13 +14,9 @@
             Note = note;
             FullName = fullName;
             TLF = tLF;
-            PowerArray = new Power[21];
-            ArrayIndex = ar;
         }
 
-        public int ArrayIndex { get; set; }
-        public static int ar = 0;
-        public Power[] PowerArray;
+
         private static int nextid = 1;
         public int ID { get; set; }
         public string CharacterName { get; set; }
