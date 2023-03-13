@@ -1,10 +1,7 @@
-
-
-
-
+--Delete the first DB and use this instead 
 
 CREATE TABLE [dbo].[Power] (
-    [Id]             INT            NOT NULL,
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [Name]           VARBINARY (50) NOT NULL,
     [Description]    VARCHAR (1000) NOT NULL,
     [Type]           VARCHAR (50)   NOT NULL,
@@ -18,22 +15,19 @@ CREATE TABLE [dbo].[Power] (
 );
 
 CREATE TABLE [dbo].[Character] (
-    [CharacterID]   INT            NOT NULL,
-    [CharacterName] NVARCHAR (50)  NOT NULL,
-    [Denomination]  NVARCHAR (50)  NOT NULL,
-    [Note]          NVARCHAR (200) NOT NULL,
-    PRIMARY KEY CLUSTERED ([CharacterID] ASC)
-);
-
-CREATE TABLE [dbo].[CharacterPower] (
-    [Id]           INT NOT NULL,
-    [CharacterID]  INT NOT NULL,
-    [PowerMagicID] INT NOT NULL,
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
+    [CharacterName] VARCHAR (50)  NOT NULL,
+    [Denomination]  VARCHAR (50)  NOT NULL,
+	[Race]  VARCHAR (50)  NOT NULL,
+    [Note]          VARCHAR (MAX) NULL,
+    [AttendenceCount]   INT DEFAULT 0 NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
+
+
 CREATE TABLE [dbo].[Magic] (
-    [Id]             INT            NOT NULL,
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [Name]           VARCHAR (50)   NOT NULL,
     [Description]    VARCHAR (1000) NOT NULL,
     [Type]           VARCHAR (50)   NOT NULL,
@@ -45,10 +39,43 @@ CREATE TABLE [dbo].[Magic] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
+CREATE TABLE [dbo].[Login] (
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
+    [UserName]  VARCHAR (50) NOT NULL,
+    [Password] VARCHAR (50) NOT NULL,
+    [PlayerName] VARCHAR (50) NOT NULL,
+    [TelephoneNumber] INT NULL,
+    [Admin] BINARY (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
 CREATE TABLE [dbo].[PowerMagic] (
-    [Id]       INT NOT NULL,
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [PowerId]  INT NULL,
     [MagicId1] INT NULL,
     [MagicId2] INT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Charater_Power_ToPower] FOREIGN KEY ([PowerId]) REFERENCES [dbo].[Power] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Charater_Power_ToMagic1] FOREIGN KEY ([MagicId1]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Charater_Power_ToMagic2] FOREIGN KEY ([MagicId2]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE
 );
+
+CREATE TABLE [dbo].[CharacterPower] (
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
+    [CharacterID]  INT NOT NULL,
+    [PowerMagicID] INT NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Charater_Power_ToCharacters] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Characters] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Charater_Power_ToPowers] FOREIGN KEY ([PowerMagicId]) REFERENCES [dbo].[Powers] ([Id]) ON DELETE CASCADE
+);
+
+CREATE TABLE [dbo].[LoginCharacter] (
+    [Id] INT IDENTITY (1,1) PRIMARY KEY,
+    [LoginId]  INT NOT NULL,
+    [CharacterId] INT NOT NULL,    
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Charater_Power_ToLogin] FOREIGN KEY ([LoginId]) REFERENCES [dbo].[Login] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Charater_Power_ToCharacter] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Character] ([Id]) ON DELETE CASCADE  
+);
+
