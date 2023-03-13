@@ -1,4 +1,11 @@
 --Delete the first DB and use this instead 
+CREATE DATABASE TheCharacterFactoryDB;
+
+GO
+
+USE TheCharacterFactoryDB;
+
+
 
 
 CREATE TABLE [dbo].[Power] (
