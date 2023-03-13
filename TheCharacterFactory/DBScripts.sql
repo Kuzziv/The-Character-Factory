@@ -38,11 +38,12 @@ CREATE TABLE [dbo].[Magic] (
     [Name]           VARCHAR (50)   NOT NULL,
     [Description]    VARCHAR (1000) NOT NULL,
     [Type]           VARCHAR (50)   NOT NULL,
-    [RequiredEvne1]  INT            NULL,
-    [RequiredEvne2]  INT            NULL,
-    [RequiredEvne3]  INT            NULL,
-    [RequiredMagic1] INT            NULL,
-    [RequiredMagic2] INT            NULL,
+    [RequiredEvne1]  VARCHAR (50)            NULL,
+    [RequiredEvne2]  VARCHAR (50)            NULL,
+    [RequiredEvne3]  VARCHAR (50)            NULL,
+    [RequiredMagic1] VARCHAR (50)            NULL,
+    [RequiredMagic2] VARCHAR (50)            NULL,
+    [RequiredMagic3] VARCHAR (50)            NULL,
 );
 
 CREATE TABLE [dbo].[Login] (
@@ -51,15 +52,15 @@ CREATE TABLE [dbo].[Login] (
     [Password] VARCHAR (50) NOT NULL,
     [PlayerName] VARCHAR (50) NOT NULL,
     [TelephoneNumber] INT NULL,
-    [Admin] BINARY (50) NOT NULL,
+    [Admin] BIT NOT NULL DEFAULT 0,
 );
 
 
 CREATE TABLE [dbo].[PowerMagic] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
-    [PowerId]  INT NULL,
-    [MagicId1] INT NULL,
-    [MagicId2] INT NULL,
+    [PowerId]  VARCHAR (50) NULL,
+    [MagicId1] VARCHAR (50) NULL,
+    [MagicId2] VARCHAR (50) NULL,
     --CONSTRAINT [FK_Charater_Power_ToPower] FOREIGN KEY ([PowerId]) REFERENCES [dbo].[Power] ([Id]) ON DELETE CASCADE,
     --CONSTRAINT [FK_Charater_Power_ToMagic1] FOREIGN KEY ([MagicId1]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE,
     --CONSTRAINT [FK_Charater_Power_ToMagic2] FOREIGN KEY ([MagicId2]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE
