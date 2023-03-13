@@ -1,5 +1,6 @@
 --Delete the first DB and use this instead 
 
+
 CREATE TABLE [dbo].[Power] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [Name]           VARBINARY (50) NOT NULL,
@@ -11,7 +12,6 @@ CREATE TABLE [dbo].[Power] (
     [RequiredPower2] INT            NULL,
     [RequiredPower3] INT            NULL,
     [RequiredPower4] INT            NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 CREATE TABLE [dbo].[Character] (
@@ -21,7 +21,6 @@ CREATE TABLE [dbo].[Character] (
 	[Race]  VARCHAR (50)  NOT NULL,
     [Note]          VARCHAR (MAX) NULL,
     [AttendenceCount]   INT DEFAULT 0 NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 
@@ -36,7 +35,6 @@ CREATE TABLE [dbo].[Magic] (
     [RequiredEvne3]  INT            NULL,
     [RequiredMagic1] INT            NULL,
     [RequiredMagic2] INT            NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 CREATE TABLE [dbo].[Login] (
@@ -46,7 +44,6 @@ CREATE TABLE [dbo].[Login] (
     [PlayerName] VARCHAR (50) NOT NULL,
     [TelephoneNumber] INT NULL,
     [Admin] BINARY (50) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 
@@ -55,7 +52,6 @@ CREATE TABLE [dbo].[PowerMagic] (
     [PowerId]  INT NULL,
     [MagicId1] INT NULL,
     [MagicId2] INT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Charater_Power_ToPower] FOREIGN KEY ([PowerId]) REFERENCES [dbo].[Power] ([Id]) ON DELETE CASCADE,
     CONSTRAINT [FK_Charater_Power_ToMagic1] FOREIGN KEY ([MagicId1]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE,
     CONSTRAINT [FK_Charater_Power_ToMagic2] FOREIGN KEY ([MagicId2]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE
@@ -65,7 +61,6 @@ CREATE TABLE [dbo].[CharacterPower] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [CharacterID]  INT NOT NULL,
     [PowerMagicID] INT NOT NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Charater_Power_ToCharacters] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Characters] ([Id]) ON DELETE CASCADE,
     CONSTRAINT [FK_Charater_Power_ToPowers] FOREIGN KEY ([PowerMagicId]) REFERENCES [dbo].[Powers] ([Id]) ON DELETE CASCADE
 );
@@ -74,7 +69,6 @@ CREATE TABLE [dbo].[LoginCharacter] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [LoginId]  INT NOT NULL,
     [CharacterId] INT NOT NULL,    
-    PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Charater_Power_ToLogin] FOREIGN KEY ([LoginId]) REFERENCES [dbo].[Login] ([Id]) ON DELETE CASCADE,
     CONSTRAINT [FK_Charater_Power_ToCharacter] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Character] ([Id]) ON DELETE CASCADE  
 );
