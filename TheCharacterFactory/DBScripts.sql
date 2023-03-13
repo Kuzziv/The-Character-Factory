@@ -52,24 +52,24 @@ CREATE TABLE [dbo].[PowerMagic] (
     [PowerId]  INT NULL,
     [MagicId1] INT NULL,
     [MagicId2] INT NULL,
-    CONSTRAINT [FK_Charater_Power_ToPower] FOREIGN KEY ([PowerId]) REFERENCES [dbo].[Power] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_Charater_Power_ToMagic1] FOREIGN KEY ([MagicId1]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_Charater_Power_ToMagic2] FOREIGN KEY ([MagicId2]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE
+    --CONSTRAINT [FK_Charater_Power_ToPower] FOREIGN KEY ([PowerId]) REFERENCES [dbo].[Power] ([Id]) ON DELETE CASCADE,
+    --CONSTRAINT [FK_Charater_Power_ToMagic1] FOREIGN KEY ([MagicId1]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE,
+    --CONSTRAINT [FK_Charater_Power_ToMagic2] FOREIGN KEY ([MagicId2]) REFERENCES [dbo].[Magic] ([Id]) ON DELETE CASCADE
 );
 
 CREATE TABLE [dbo].[CharacterPower] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [CharacterID]  INT NOT NULL,
     [PowerMagicID] INT NOT NULL,
-    CONSTRAINT [FK_Charater_Power_ToCharacters] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Characters] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_Charater_Power_ToPowers] FOREIGN KEY ([PowerMagicId]) REFERENCES [dbo].[Powers] ([Id]) ON DELETE CASCADE
+    --CONSTRAINT [FK_Charater_Power_ToCharacters] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Character] ([Id]) ON DELETE CASCADE,
+    --CONSTRAINT [FK_Charater_Power_ToPowers] FOREIGN KEY ([PowerMagicId]) REFERENCES [dbo].[PowerMagic] ([Id]) ON DELETE CASCADE
 );
 
 CREATE TABLE [dbo].[LoginCharacter] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
     [LoginId]  INT NOT NULL,
     [CharacterId] INT NOT NULL,    
-    CONSTRAINT [FK_Charater_Power_ToLogin] FOREIGN KEY ([LoginId]) REFERENCES [dbo].[Login] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_Charater_Power_ToCharacter] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Character] ([Id]) ON DELETE CASCADE  
+    --CONSTRAINT [FK_Charater_Power_ToLogin] FOREIGN KEY ([LoginId]) REFERENCES [dbo].[Login] ([Id]) ON DELETE CASCADE,
+    --CONSTRAINT [FK_Charater_Power_ToCharacter] FOREIGN KEY ([CharacterId]) REFERENCES [dbo].[Character] ([Id]) ON DELETE CASCADE  
 );
 
