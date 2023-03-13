@@ -9,17 +9,18 @@ USE TheCharacterFactoryDB;
 
 
 CREATE TABLE [dbo].[Power] (
-    [Id] INT IDENTITY (1,1) PRIMARY KEY,
-    [Name]           VARBINARY (50) NOT NULL,
+    [Id]             INT            IDENTITY (1, 1) NOT NULL,
+    [Name]           VARCHAR(50) NOT NULL,
     [Description]    VARCHAR (1000) NOT NULL,
     [Type]           VARCHAR (50)   NOT NULL,
-    [BlockedPowers]  BINARY (50)    NULL,
-    [BlocksMagic]    BINARY (50)    NOT NULL,
-    [RequiredPower1] INT            NULL,
-    [RequiredPower2] INT            NULL,
-    [RequiredPower3] INT            NULL,
-    [RequiredPower4] INT            NULL,
+    [BlockedPowers]  VARCHAR (50)    NULL,
+    [BlocksMagic]    BIT    NOT NULL DEFAULT 0,
+    [RequiredPower1] VARCHAR(50)            NULL DEFAULT NULL,
+    [RequiredPower2] VARCHAR(50)            NULL DEFAULT NULL,
+    [RequiredPower3] VARCHAR(50)            NULL DEFAULT NULL,
+    [RequiredPower4] VARCHAR(50)            NULL DEFAULT NULL,
 );
+
 
 CREATE TABLE [dbo].[Character] (
     [Id] INT IDENTITY (1,1) PRIMARY KEY,
