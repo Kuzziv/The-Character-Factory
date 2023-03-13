@@ -13,8 +13,6 @@
             Denomination = denomination;
             Race = race;
             Note = note;
-            FullName = fullName;
-            TLF = tLF;
         }
 
 
@@ -24,8 +22,6 @@
         public string Race { get; set; }
         public string Denomination { get; set; }
         public string Note { get; set; }
-        public string FullName { get; set; }
-        public double TLF { get; set; }
 
     }
 }
