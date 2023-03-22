@@ -10,22 +10,19 @@ namespace TheCharacterFactory.Pages.User
     {
         ICharacterService _icharacterService;
         IUserService _iuserService;
-
-       
+        
         public List<Models.Character> UserCharacters { get; set; }
         public Models.Login user = LogInPageModel.LoggedInUser;
-
-        public void OnGet()
-        {
-            UserCharacters = _iuserService.FindPlayerCharactersByUserId(LogInPageModel.LoggedInUser.Id).ToList();
-        }
 
         public UserCharactersModel(ICharacterService characterService, IUserService userService)
         {
             _icharacterService = characterService;
             _iuserService = userService;
         }
-      
-        
+
+        public void OnGet()
+        {
+            UserCharacters = _iuserService.FindPlayerCharactersByUserId(LogInPageModel.LoggedInUser.Id).ToList();
+        }        
     }
 }
