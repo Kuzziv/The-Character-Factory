@@ -4,15 +4,15 @@
     {
         public int Id { get; set; }
         public int PowerId { get; set; }
-        public int MagicId1 { get; set; }
-        public int MagicId2 { get; set; }
+        public int? MagicId1 { get; set; }
+        public int? MagicId2 { get; set; }
 
         public PowerMagic()
         {
             
         }
 
-        public PowerMagic(int id, int powerId, int magicId1, int magicId2)
+        public PowerMagic(int id, int powerId, int? magicId1, int? magicId2)
         {
             Id = id;
             PowerId = powerId;
