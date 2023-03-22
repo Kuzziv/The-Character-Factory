@@ -6,18 +6,18 @@ namespace TheCharacterFactory.Pages.Character
 {
     public class CharacterListPageModel : PageModel
     {
-        ICharacterService characterService;
+        ICharacterService _icharacterService;
 
         public List<Models.Character> Character { get; set; }
 
         public CharacterListPageModel(ICharacterService characterService)
         {
-            this.characterService = characterService;
+            this._icharacterService = characterService;
         }
 
         public void OnGet()
         {
-            Character = characterService.GetCharacters();
+            Character = _icharacterService.GetCharacters();
         }
     }
 }
