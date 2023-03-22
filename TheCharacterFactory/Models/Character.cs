@@ -6,7 +6,7 @@
         {
         }
 
-        public Character(string characterName,string race, string denomination, string note)
+        public Character(string characterName,string race, string denomination, string note, int loginId)
         {
             ID = nextid++;
             CharacterName = characterName;
@@ -14,6 +14,7 @@
             Race = race;
             Note = note;
             TimesUsed = 0;
+            LoginId = loginId;
         }
 
 
@@ -24,6 +25,7 @@
         public string Denomination { get; set; }
         public string Note { get; set; }
         public int TimesUsed { get; set; }
+        public int LoginId { get; set; }
 
         public void UseCharacter()
         {

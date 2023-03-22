@@ -1,0 +1,56 @@
+﻿@page
+@model TheCharacterFactory.Pages.User.UserCharactersModel
+@{
+}
+<h4 style="color:red"> List of Character </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Character name
+            </th>
+            <th>
+                Denomination
+            </th>
+            <th>
+                Race
+            </th>
+            <th>
+                Note
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.UserCharacters != null)
+        {
+            @foreach (var item in Model.UserCharacters)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        @item.CharacterName
+                    </td>
+                    <td>
+                        @item.Denomination
+                    </td>
+                    <td>
+                        @item.Race
+                    </td>
+                    <td>
+                        @item.Note
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br />
+<p>
+    <a class="btn btn-primary" data-toggle="tooltip" title="Tilbage Til Min Konto" asp-page="/User/UserInfoPage"><i class="fa fa-plus-square mr-1"></i> Tilbage </a>
+</p>
+<br />

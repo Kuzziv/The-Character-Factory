@@ -3,5 +3,6 @@
     public interface IUserService
     {
         List<Models.Login> GetLogins();
+       
     }
 }
