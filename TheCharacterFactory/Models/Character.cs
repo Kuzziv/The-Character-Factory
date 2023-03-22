@@ -13,6 +13,7 @@
             Denomination = denomination;
             Race = race;
             Note = note;
+            TimesUsed = 0;
         }
 
 
@@ -22,6 +23,11 @@
         public string Race { get; set; }
         public string Denomination { get; set; }
         public string Note { get; set; }
+        public int TimesUsed { get; set; }
 
+        public void UseCharacter()
+        {
+            TimesUsed++;
+        }
     }
 }
