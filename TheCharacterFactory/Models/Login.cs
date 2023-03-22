@@ -14,9 +14,9 @@
         {
         }
 
-        public Login(string userName, string password, bool admin, string fullName, string tlf)
+        public Login(int id, string userName, string password, bool admin, string fullName, string tlf)
         {
-            Id = nextId++;
+            Id = id;
             UserName = userName;
             Password = password;
             Admin = admin;
