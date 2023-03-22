@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using TheCharacterFactory.Pages.Login
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,13 +19,39 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
+                    <ul class="navbar-nav flex-grow-1">                       
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Character/CharacterListPage">Character List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Power/PowerListPage">Power List</a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="navbar-nav">
+                        @{
+                            if (LogInPageModel.LoggedInUser == null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-black" asp-area="" asp-page="/LogIn/LogInPage">Login</a>
+                                </li>
+                            }
+                            else
+                            {
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link text-black" asp-area="" asp-page="/User/UserInfoPage">Min Konto</a>
+                                </li>
+                                
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-black" asp-area="" asp-page="/LogIn/LogOutPage">Logout</a>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>

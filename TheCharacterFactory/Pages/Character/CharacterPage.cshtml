@@ -1,0 +1,44 @@
+﻿@page
+@model TheCharacterFactory.Pages.Character.CharacterPageModel
+@{
+}
+
+
+<h4 style="color:red"> Character: @Model.Character.CharacterName </h4>
+
+        @if (Model.Character != null)
+        {
+                           
+                <h3>
+                    @Model.Character.CharacterName
+                </h3>
+                <h3>
+                    @Model.Character.Denomination
+                </h3>
+                <h3>
+                    @Model.Character.Race
+                </h3>
+                <h3>
+                    @Model.Character.Note
+                </h3>
+                <h3>
+                    @Model.Character.TimesUsed
+                </h3>
+                @if (Model.Character.TimesUsed == 2 || Model.Character.TimesUsed == 4 || Model.Character.TimesUsed == 6 || Model.Character.TimesUsed == 9 || Model.Character.TimesUsed == 12 || Model.Character.TimesUsed == 15 || Model.Character.TimesUsed == 19 || Model.Character.TimesUsed == 23 || Model.Character.TimesUsed == 27 || Model.Character.TimesUsed == 31)
+                {
+                    <a class="btn btn-danger btn-sm " type="button" title="Ny Evner" asp-page="UpgradeCharacter" asp-route-id="@Model.Character.ID">Valg Ny Evne</a>
+                }
+                @if (Model.Character.TimesUsed == 0)
+                {
+                    <a class="btn btn-danger btn-sm " type="button" title="Ny Evner" asp-page="InitialPowerSelection" asp-route-id="@Model.Character.ID">Valg Start Evner</a>
+                }
+
+            
+        }
+
+
+<br />
+<p>
+    <a class="btn btn-primary" data-toggle="tooltip" title="Tilbage Til Min Konto" asp-page="/User/UserCharacters"><i class="fa fa-plus-square mr-1"></i> Tilbage </a>
+</p>
+<br />

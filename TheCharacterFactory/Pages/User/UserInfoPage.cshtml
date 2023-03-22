@@ -1,0 +1,16 @@
+﻿@page
+@model TheCharacterFactory.Pages.User.UserInfoPageModel
+@{
+}
+<h1>Hej @Model.user.FullName</h1>
+<h3>Velkommen til The Chacter Factory</h3>
+<br />
+<h2>Dine Oplysninger:</h2>
+<p>Navn: @Model.user.FullName</p>
+<p>Brugernavn: @Model.user.UserName</p>
+<p>Tlf: @Model.user.Tlf</p>
+<p>
+    <a class="btn btn-primary" data-toggle="tooltip" title="Mine Karakterer" asp-page="/User/UserCharacters"><i class="fa fa-plus-square mr-1"></i> Mine Karakterer </a>
+</p>
+
+

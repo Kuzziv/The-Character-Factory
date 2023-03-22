@@ -1,0 +1,46 @@
+﻿@page
+@model TheCharacterFactory.Pages.Character.CreateCharacterModel
+@{
+}
+
+
+<h1>Create Character</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Character.ID" class="control-lable"></label>
+                <input asp-for="@Model.Character.ID" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Character.CharacterName" class="control-lable"></label>
+                <input asp-for="@Model.Character.CharacterName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Character.Denomination" class="control-lable"></label>
+                <input asp-for="@Model.Character.Denomination" class="form-control" />
+            </div>    
+            <div class="form-group">
+                <label asp-for="@Model.Character.Note" class="control-lable"></label>
+                <input asp-for="@Model.Character.Note" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Character.Race" class="control-lable"></label>
+                <input asp-for="@Model.Character.Race" class="form-control" />
+            </div>
+          
+            <div class="form-group">
+                @*<label asp-for="@Model.Character.LoginId" class="control-lable" type="hidden"></label>*@
+                <input asp-for="@Model.user.Id" class="form-control" type="hidden"/>
+            </div>
+            <h3>Husk at gå ind på din nye karakter for at valge Evner via "Min Karakterer"</h3>
+            <div class="form-group">   
+                <input type="submit" value="Valg Evner" class="btn btn-primary" />             
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="/Character/CharacterListPage">Back to List</a>
+</div>
