@@ -23,5 +23,16 @@ namespace TheCharacterFactory.Services.MockService
             _charactersList.Add(character);
         }
 
+        public Character GetCharacterById(int id) 
+        {
+            foreach (Character character in _charactersList)
+            {
+                if (character.ID == id)
+                {
+                    return character;
+                }
+            }
+            return null;
+        }
     }
 }

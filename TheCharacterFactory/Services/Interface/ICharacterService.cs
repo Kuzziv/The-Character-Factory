@@ -7,5 +7,7 @@ namespace TheCharacterFactory.Services.Interface
         List<Character> GetCharacters();
 
         void AddCharacter(Character character);
+
+        public Character GetCharacterById(int id);
     }
 }

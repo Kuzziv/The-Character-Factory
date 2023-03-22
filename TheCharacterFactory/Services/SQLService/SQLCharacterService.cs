@@ -3,7 +3,7 @@ using TheCharacterFactory.Services.Interface;
 
 namespace TheCharacterFactory.Services.SQLService
 {
-    public class SQLCharacterService : ICharacterService
+    public class SQLCharacterService /*: ICharacterService*/
     {
         public void AddCharacter(Character character)
         {
