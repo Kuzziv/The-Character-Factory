@@ -18,7 +18,7 @@ namespace TheCharacterFactory.Pages.User
         public void OnGet()
         {
 
-            FindPlayerCharacters();
+            UserCharacters = FindPlayerCharacters().ToList();
         }
 
         public UserCharactersModel(ICharacterService characterService, IUserService userService)
@@ -27,21 +27,21 @@ namespace TheCharacterFactory.Pages.User
             _userService = userService;
         }
       
-        public void FindPlayerCharacters()
+        public IEnumerable<Models.Character> FindPlayerCharacters()
         {           
 
-            List<Models.Character> Characters = _icharacterService.GetCharacters();
+            List<Models.Character> Characters = _icharacterService.GetCharacters().ToList();
 
             List <Models.Character> playerCharacters = new List<Models.Character>();
 
             foreach (var character in Characters)
             {
-                if(character.ID == user.Id)
+                if(character.LoginId == user.Id)
                 {
                     playerCharacters.Add(character);
                 }
             }
-            UserCharacters = playerCharacters;
+            return playerCharacters;
         }
     }
 }
