@@ -2,6 +2,7 @@
 {
     public class Magic
     {
+        public int nextId = 1;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,9 +18,9 @@
             
         }
 
-        public Magic(int id, string name, string description, string type, int requiredEvne1, int requiredEvne2, int requiredEvne3, int requiredMagic1, int requiredMagic2)
+        public Magic( string name, string description, string type, int requiredEvne1, int requiredEvne2, int requiredEvne3, int requiredMagic1, int requiredMagic2)
         {
-            Id = id;
+            Id = nextId++;
             Name = name;
             Description = description;
             Type = type;

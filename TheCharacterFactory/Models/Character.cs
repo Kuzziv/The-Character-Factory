@@ -6,7 +6,7 @@
         {
         }
 
-        public Character(string characterName,string race, string denomination, string note, string fullName, double tLF)
+        public Character(string characterName,string race, string denomination, string note)
         {
             ID = nextid++;
             CharacterName = characterName;

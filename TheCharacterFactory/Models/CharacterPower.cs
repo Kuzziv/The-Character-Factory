@@ -2,6 +2,7 @@
 {
     public class CharacterPower
     {
+        public int nextId = 1;
         public int id { get; set; }
         public int CharacterId { get; set; }
         public int PowerMagicId { get; set; }
@@ -11,9 +12,9 @@
             
         }
 
-        public CharacterPower(int id, int characterId, int powerMagicId)
+        public CharacterPower( int characterId, int powerMagicId)
         {
-            this.id = id;
+            id = nextId++;
             CharacterId = characterId;
             PowerMagicId = powerMagicId;
         }
