@@ -6,11 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-//builder.Services.AddSingleton<ICharacterService, CharacterService>();
-//builder.Services.AddSingleton<IPowerService, PowerService>();
+builder.Services.AddSingleton<ICharacterService, MockCharacterService>();
+builder.Services.AddSingleton<IPowerService, MockPowerService>();
 
-builder.Services.AddTransient<ICharacterService, SQLCharacterService>();
-builder.Services.AddTransient<IPowerService, SQLPowerService>();
+//builder.Services.AddTransient<ICharacterService, SQLCharacterService>();
+//builder.Services.AddTransient<IPowerService, SQLPowerService>();
 
 
 var app = builder.Build();

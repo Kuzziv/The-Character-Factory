@@ -7,10 +7,10 @@ namespace TheCharacterFactory.MockData
     {
         public static List<Character> _character = new List<Character>()
         {
-            new Character("Foo","Black Demon","The Holy Light","I'm your father","Foo Fun", 61675837),
-            new Character("Poo","Black Mamba", "The Dark Side","I'm the shit","Poo Fun", 61675837),
-            new Character("Bar","Space Man", "The Holy side","I'm your farther","Bar Fun", 61675837),
-            new Character("Sky","Space angel", "The No where","light","Sky Fun", 61675837)
+            new Character("Foo","Black Demon","The Holy Light","I'm your father"),
+            new Character("Poo", "Black Mamba", "The Dark Side", "I'm the shit"),
+            new Character("Bar", "Space Man", "The Holy side", "I'm your farther"),
+            new Character("Sky", "Space angel", "The No where", "light")
         };
 
         public static List<Character> GetMockCharacterStories() { return _character; }

@@ -23,11 +23,11 @@ namespace TheCharacterFactory.Pages.Character
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+            _IcharacterService.AddCharacter(Character);
             return RedirectToPage("/Character/CharacterListPage");
         }
     }

@@ -4,11 +4,11 @@ using TheCharacterFactory.Services.Interface;
 
 namespace TheCharacterFactory.Services.MockService
 {
-    public class CharacterService : ICharacterService
+    public class MockCharacterService : ICharacterService
     {
         private List<Character> _charactersList;
 
-        public CharacterService()
+        public MockCharacterService()
         {
             _charactersList = MockData.MockCharacter.GetMockCharacterStories();
         }
@@ -17,5 +17,11 @@ namespace TheCharacterFactory.Services.MockService
         {
              return _charactersList; 
         }
+
+        public void AddCharacter(Character character)
+        {
+            _charactersList.Add(character);
+        }
+
     }
 }
