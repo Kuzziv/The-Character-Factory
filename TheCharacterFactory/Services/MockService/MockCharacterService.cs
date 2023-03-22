@@ -23,7 +23,7 @@ namespace TheCharacterFactory.Services.MockService
             _charactersList.Add(character);
         }
 
-        public Character GetCharacter(int id)
+        public Character GetCharacterById(int id)
         {
             foreach(Character character in _charactersList)
             {

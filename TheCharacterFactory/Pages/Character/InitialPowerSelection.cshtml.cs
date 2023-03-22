@@ -17,7 +17,7 @@ namespace TheCharacterFactory.Pages.Character
 
         public IActionResult OnGet(int id)
         {
-            Character = _characterService.GetCharacter(id);
+            Character = _characterService.GetCharacterById(id);
             if(Character == null)
             {
                 return NotFound();

@@ -8,6 +8,6 @@ namespace TheCharacterFactory.Services.Interface
 
         void AddCharacter(Character character);
 
-        Character GetCharacter(int id);
+        Character GetCharacterById(int id);
     }
 }
