@@ -5,49 +5,37 @@
 
 
 <h4 style="color:red"> Character: @Model.Character.CharacterName </h4>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Character name
-            </th>
-            <th>
-                Denomination
-            </th>
-            <th>
-                Race
-            </th>
-            <th>
-                Note
-            </th>            
-        </tr>
-    </thead>
-    <tbody>
+
         @if (Model.Character != null)
         {
-            <tr>
-                <td>
-                    @Model.Character.ID
-                </td>
-                <td>
+                           
+                <h3>
                     @Model.Character.CharacterName
-                </td>
-                <td>
+                </h3>
+                <h3>
                     @Model.Character.Denomination
-                </td>
-                <td>
+                </h3>
+                <h3>
                     @Model.Character.Race
-                </td>
-                <td>
+                </h3>
+                <h3>
                     @Model.Character.Note
-                </td>
-             </tr>
+                </h3>
+                <h3>
+                    @Model.Character.TimesUsed
+                </h3>
+                @if (Model.Character.TimesUsed == 2 || Model.Character.TimesUsed == 4 || Model.Character.TimesUsed == 6 || Model.Character.TimesUsed == 9 || Model.Character.TimesUsed == 12 || Model.Character.TimesUsed == 15 || Model.Character.TimesUsed == 19 || Model.Character.TimesUsed == 23 || Model.Character.TimesUsed == 27 || Model.Character.TimesUsed == 31)
+                {
+                    <a class="btn btn-danger btn-sm " type="button" title="Ny Evner" asp-page="UpgradeCharacter" asp-route-id="@Model.Character.ID">Valg Ny Evne</a>
+                }
+                @if (Model.Character.TimesUsed == 0)
+                {
+                    <a class="btn btn-danger btn-sm " type="button" title="Ny Evner" asp-page="InitialPowerSelection" asp-route-id="@Model.Character.ID">Valg Start Evner</a>
+                }
+
+            
         }
-    </tbody>
-</table>
+
 
 <br />
 <p>
