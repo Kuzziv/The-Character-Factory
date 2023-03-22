@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 });
 builder.Services.AddMvc().AddRazorPagesOptions(options => {
-    options.Conventions.AuthorizeFolder("/Power");
+    options.Conventions.AuthorizeFolder("/Character");
 
 }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
