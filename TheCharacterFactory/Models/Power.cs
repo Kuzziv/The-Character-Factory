@@ -19,7 +19,7 @@
         {            
         }
 
-        public Power( string name, string description, string type, bool blocksMagic, int blockedEvne, int requiredEvne1, int requiredEvne2, int requiredEvne3, int requiredEvne4)
+        public Power(string name, string description, string type, bool blocksMagic, int blockedEvne, int requiredEvne1, int requiredEvne2, int requiredEvne3, int requiredEvne4)
         {
             Id = nextid++;
             Name = name;
