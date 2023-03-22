@@ -42,7 +42,7 @@ namespace TheCharacterFactory.Pages.Login
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                    return RedirectToPage("/Character/CharacterListPage");
+                    return RedirectToPage("/User/UserInfoPage");
 
                 }
 
