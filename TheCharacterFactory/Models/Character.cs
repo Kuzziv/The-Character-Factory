@@ -6,9 +6,9 @@
         {
         }
 
-        public Character(string characterName,string race, string denomination, string note, int loginId)
+        public Character(int id, string characterName,string race, string denomination, string note, int loginId)
         {
-            ID = nextid++;
+            ID = id;
             CharacterName = characterName;
             Denomination = denomination;
             Race = race;
