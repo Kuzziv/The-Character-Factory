@@ -24,11 +24,11 @@ namespace TheCharacterFactory.Services.SQLService
                     while (reader.Read())
                     {
                         Power power = new Power();
-                        power.ID = Convert.ToInt32(reader[0]);
+                        power.Id = Convert.ToInt32(reader[0]);
                         power.Name = Convert.ToString(reader[1]);
                         power.Description = Convert.ToString(reader[2]);
                         power.Type = Convert.ToString(reader[3]);
-                        power.UnLocked = Convert.ToBoolean(reader[4]);
+                        
 
                         powerList.Add(power);
 
