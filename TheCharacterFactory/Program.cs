@@ -12,6 +12,11 @@ builder.Services.AddSingleton<ICharacterService, MockCharacterService>();
 builder.Services.AddSingleton<IPowerService, MockPowerService>();
 builder.Services.AddSingleton<ICharacterPowerService, MockCharacterPowerService>();
 builder.Services.AddSingleton<IUserService, MockUserService>();
+
+//builder.Services.AddTransient<ICharacterService, SQLCharacterService>();
+//builder.Services.AddTransient<IPowerService, SQLPowerService>();
+
+
 builder.Services.Configure<CookiePolicyOptions>(options => {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request. options.CheckConsentNeeded = context => true;
     options.MinimumSameSitePolicy = SameSiteMode.None;
@@ -26,14 +31,8 @@ builder.Services.AddMvc().AddRazorPagesOptions(options => {
     options.Conventions.AuthorizeFolder("/Character");
 
 }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-builder.Services.AddMvc().AddRazorPagesOptions(options =>
-{
-    options.Conventions.AuthorizeFolder("/CharacterPower");
 
-}).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-//builder.Services.AddTransient<ICharacterService, SQLCharacterService>();
-//builder.Services.AddTransient<IPowerService, SQLPowerService>();
 
 
 var app = builder.Build();
