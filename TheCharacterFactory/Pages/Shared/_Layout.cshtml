@@ -38,17 +38,19 @@
                             if (LogInPageModel.LoggedInUser == null)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LogInPage">Login</a>
+                                    <a class="nav-link text-black" asp-area="" asp-page="/LogIn/LogInPage">Login</a>
                                 </li>
                             }
                             else
                             {
-                                <li class="nav-item nav-link text-white me-3">
-                                    User: @LogInPageModel.LoggedInUser.UserName
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link text-black" asp-area="" asp-page="/User/UserInfoPage">Min Konto</a>
                                 </li>
+                                
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LogOutPage">Logout</a>
+                                    <a class="nav-link text-black" asp-area="" asp-page="/LogIn/LogOutPage">Logout</a>
                                 </li>
                             }
                         }
