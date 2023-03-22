@@ -26,6 +26,11 @@ builder.Services.AddMvc().AddRazorPagesOptions(options => {
     options.Conventions.AuthorizeFolder("/Character");
 
 }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+builder.Services.AddMvc().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AuthorizeFolder("/CharacterPower");
+
+}).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 //builder.Services.AddTransient<ICharacterService, SQLCharacterService>();
 //builder.Services.AddTransient<IPowerService, SQLPowerService>();
