@@ -25,5 +25,9 @@
         public string Note { get; set; }
         public int TimesUsed { get; set; }
 
+        public void UseCharacter()
+        {
+            TimesUsed++;
+        }
     }
 }
