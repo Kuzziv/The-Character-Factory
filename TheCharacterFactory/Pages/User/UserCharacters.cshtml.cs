@@ -41,6 +41,7 @@ namespace TheCharacterFactory.Pages.User
                     playerCharacters.Add(character);
                 }
             }
+
             return playerCharacters;
         }
     }
