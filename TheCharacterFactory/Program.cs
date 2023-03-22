@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<ICharacterService, MockCharacterService>();
 builder.Services.AddSingleton<IPowerService, MockPowerService>();
-builder.Services.AddSingleton<ICharacterPowerService, MockCharacterPowerService>();
 builder.Services.AddSingleton<IUserService, MockUserService>();
 
 //builder.Services.AddTransient<ICharacterService, SQLCharacterService>();

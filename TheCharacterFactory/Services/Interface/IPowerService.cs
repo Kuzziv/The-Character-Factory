@@ -6,6 +6,9 @@ namespace TheCharacterFactory.Services.Interface
     {
         List<Power> GetPowerList();
 
+     
+
+
 
     }
 }
