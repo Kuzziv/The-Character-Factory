@@ -9,7 +9,7 @@ namespace TheCharacterFactory.Services.MockService
 
         public MockUserService()
         {
-            this.logins = logins;
+            logins = MockData.MockLogin.
         }
     }
 }
