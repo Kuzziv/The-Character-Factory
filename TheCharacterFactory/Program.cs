@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using TheCharacterFactory.Services.Interface;
 using TheCharacterFactory.Services.MockService;
 using TheCharacterFactory.Services.SQLService;
@@ -9,6 +11,21 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<ICharacterService, MockCharacterService>();
 builder.Services.AddSingleton<IPowerService, MockPowerService>();
 builder.Services.AddSingleton<ICharacterPowerService, MockCharacterPowerService>();
+builder.Services.AddSingleton<IUserService, MockUserService>();
+builder.Services.Configure<CookiePolicyOptions>(options => {
+    // This lambda determines whether user consent for non-essential cookies is needed for a given request. options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+
+});
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(cookieOptions => {
+    cookieOptions.LoginPath = "/Login/LogInPage";
+
+});
+builder.Services.AddMvc().AddRazorPagesOptions(options => {
+    options.Conventions.AuthorizeFolder("/Power");
+
+}).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 //builder.Services.AddTransient<ICharacterService, SQLCharacterService>();
 //builder.Services.AddTransient<IPowerService, SQLPowerService>();
@@ -28,6 +45,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication( );
 
 app.UseAuthorization();
 
