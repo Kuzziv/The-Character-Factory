@@ -1,9 +1,9 @@
 ﻿using System.Data.SqlClient;
 using TheCharacterFactory.Models;
 
-namespace TheCharacterFactory.Services.SQLService
+namespace TheCharacterFactory.Services.SQLQueryService
 {
-    public class SQLCharacter
+    public class SQLQueryCharacters
     {
         static string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TheCharacterFactoryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
 

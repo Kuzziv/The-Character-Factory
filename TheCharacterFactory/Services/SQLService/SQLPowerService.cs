@@ -7,7 +7,7 @@ namespace TheCharacterFactory.Services.SQLService
     {
         public List<Power> GetPowerList()
         {
-            return SQLPower.GetAllPower();
+            return SQLQueryService.SQLQueryPowers.GetAllPower();
         }
     }
 }

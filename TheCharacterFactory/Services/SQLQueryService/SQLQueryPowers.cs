@@ -1,11 +1,10 @@
 ﻿using System.Data.SqlClient;
 using TheCharacterFactory.Models;
 
-namespace TheCharacterFactory.Services.SQLService
+namespace TheCharacterFactory.Services.SQLQueryService
 {
-    public class SQLPower
+    public class SQLQueryPowers
     {
-
         static string ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TheCharacterFactoryDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
 
 
@@ -28,7 +27,7 @@ namespace TheCharacterFactory.Services.SQLService
                         power.Name = Convert.ToString(reader[1]);
                         power.Description = Convert.ToString(reader[2]);
                         power.Type = Convert.ToString(reader[3]);
-                        
+
 
                         powerList.Add(power);
 
@@ -38,8 +37,6 @@ namespace TheCharacterFactory.Services.SQLService
             return powerList;
         }
         #endregion
-
-
 
     }
 }

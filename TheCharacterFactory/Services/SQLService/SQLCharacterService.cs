@@ -12,7 +12,7 @@ namespace TheCharacterFactory.Services.SQLService
 
         public List<Character> GetCharacters()
         {
-            return SQLCharacter.GetAllCharacter();
+            return SQLQueryService.SQLQueryCharacters.GetAllCharacter();
         }
     }
 }
